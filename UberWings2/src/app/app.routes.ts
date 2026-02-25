@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { EarningsComponent } from './pages/rides/earnings/earnings.component';
-import { HomeComponent } from './pages/home/home.component';
+import { Dashboard } from './pages/dashboard/dashboard';
+import { Earnings } from './pages/rides/earnings/earnings';
+import { Home } from './pages/home/home';
 
 export const routes: Routes = [
 
-    {  path: '', component: HomeComponent     },
+    {  path: '', component: Home},
 
-    {  path: 'earnings', component: EarningsComponent        },
+    {  path: 'earnings', component: Earnings},
 
-    {  path: 'dashboard', component: DashboardComponent     }
+    {  path: 'dashboard', component: Dashboard}
 
 ];
