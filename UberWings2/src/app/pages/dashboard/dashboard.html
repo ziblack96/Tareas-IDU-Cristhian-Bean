@@ -4,7 +4,9 @@
         <div class="flex items-center gap-2"> 
             <img class="h-8 w-8 object-contain rounded-full" src="/assets/gente.png" alt="ImagenPerfil">
             <h1 class="text-sm font-medium">Dominique Ch.</h1>
+            <img class="h-auto w-4 object-contain rounded-full"  src="/assets/flecha-hacia-abajo.png" alt="flecha-hacia-abajo-perfil">
         </div>
+
         <img class="h-8 w-8 object-contain rounded-full" src="/assets/campana-de-notificacion.png" alt="Notificaciones-Campana">
     </nav>
 
@@ -12,65 +14,83 @@
                 
             <div class=" flex flex-col lg:flex-row lg:justify-between">
                 <div class="bg-white h-24 w-48 lg:h-60 lg:w-60 rounded-xl m-3" >
-                    <h1 class="text-gray-700 text-center  p-2 text-sm lg:text-lg lg:p-5" >Conductores registrados</h1> 
-                    <p  class="text-black text-center text-sm lg:text-5xl lg:p-5 font-bold" >27</p>
+                    <h1 class="text-gray-700 text-left  p-2 text-sm lg:text-lg lg:p-5" >Conductores registrados</h1> 
+                    <p  class="text-black text-left text-sm lg:text-5xl lg:p-5 font-bold" >27</p>
                 </div>
 
                 <div class="bg-white h-24 w-48 lg:h-60 lg:w-60 rounded-xl m-3">
-                    <h1 class=" text-gray-700 text-center  p-2 text-sm lg:text-lg lg:p-5"> Viajes realizados </h1> 
-                    <p class="text-black text-center text-sm lg:text-5xl lg:p-5 font-bold">10</p>
+                    <h1 class=" text-gray-700 text-left  p-2 text-sm lg:text-lg lg:p-5"> Viajes realizados </h1> 
+                    <p class="text-black text-left text-sm lg:text-5xl lg:p-5 font-bold">10</p>
                 </div>
 
                 <div class="bg-white h-24 w-48 lg:h-60 lg:w-60 rounded-xl m-3">
-                    <h1 class="text-gray-700 text-center  p-2 text-sm lg:text-lg lg:p-5" >Ganancias totales</h1> 
-                        <p class="text-black text-center text-sm lg:text-5xl lg:p-5 font-bold">L. 3,290</p> 
+                    <h1 class="text-gray-700 text-left  p-2 text-sm lg:text-lg lg:p-5" >Ganancias totales</h1> 
+                        <p class="text-black text-left text-sm lg:text-5xl lg:p-5 font-bold">L. 3,290</p> 
                 </div>
             </div>
 
-            <div class="flex flex-col lg:flex-row lg:justify-between border-black border-2" >
+            <div class="flex flex-col lg:flex-row lg:justify-between">
                 
-                <div class="bg-white h-full w-full p-5 gap-lg lg:h-96 lg:w-96 rounded-xl m-3">
+                <div class="bg-gray-100 h-auto min-w-72 p-5 gap-lg lg:w-96 rounded-xl m-3
+                flex flex-col gap-5">
                 
-                    <h1 class="text-gray-700 lg:text-lg lg:p-5 font-medium">Conductores</h1>
-
-                    <div name="Conductores " class="flex flex-col gap-2 p-2 h-auto ">
-                        <div>
-                              <img class="h-8 w-8 object-contain rounded-full"  src="/src/assets/anciano.png"    alt="Anciano-perfil">
-                              <h5>Chris Friedkly</h5>>
-                              <p>user@gmail.com</p>
-                        </div>
-                        <div>                            
-                            <img class="h-8 w-8 object-contain rounded-full"  src="/src/assets/hombre.png"     alt="Anciano-perfil">
-                            <h5>Gael Harry</h5>>
-                            <p>user@gmail.com</p>
-                        </div>
-                        <div>                            
-                            <img class="h-8 w-8 object-contain rounded-full" src="/src/assets/man-indu.png"   alt="Anciano-perfil">
-                            <h5>Jenna Sullivan</h5>
-                            <p>user@gmail.com</p>
-                        </div>
-                        <div>
-                            
-                        <img class="h-8 w-8 object-contain rounded-full" src="/src/assets/man-white.png"  alt="Anciano-perfil">
-                        <h5>Jenna Sullivan</h5>
-                        <p>user@gmail.com</p>
-                        </div>
-                        <div>
-                            
-                        <img class="h-8 w-8 object-contain rounded-full" src="/src/assets/woman-indu.png" alt="Anciano-perfil">
-                        <h5>Jenna Sullivan</h5>
-                        <p>user@gmail.com</p>
-                        </div>
-
-                        <h2 class="text-orange-400">Todos los conductores</h2>
-                        <img src="/src/assets/flecha-correcta.png" alt="">
+                    <div class="flex flex-row justify-between">
+                        <h1 class="text-black font-semibold lg:text-3xl">Conductores</h1>
+                        <img class="h-auto w-6 object-contain rounded-full"  src="/assets/flecha-hacia-abajo.png" alt="flecha-hacia-abajo-conductores">
                     </div>
 
+                        <div class="w-25 h-auto flex flex-row gap-2">
+                              <img class="h-auto w-12 object-contain rounded-full"  src="/assets/anciano.png"    alt="Anciano-perfil">
+                            <div class="flex flex-col">
+                                <h5 class="font-bold lg:text-lg">Chris Friedkly</h5>
+                                <p>user@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="w-25 h-auto flex flex-row gap-2">                            
+                            <img class="h-auto w-12 object-contain rounded-full"  src="/assets/hombre.png"     alt="Anciano-perfil">
+                            <div class="flex flex-col">
+                            <h5 class="font-bold lg:text-md">Gael Harry</h5>
+                            <p>user@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="w-25 h-auto flex flex-row gap-2">                            
+                            <img class="h-auto w-12 object-contain rounded-full" src="/assets/man-indu.png"   alt="Anciano-perfil">
+                            <div class="flex flex-col">
+                            <h5 class="font-bold lg:text-md">Jenna Sullivan</h5>
+                            <p>user@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="w-25 h-auto flex flex-row gap-2">    
+                            <img class="h-auto w-12 object-contain rounded-full" src="/assets/man-white.png"  alt="Anciano-perfil">
+                            <div class="flex flex-col">
+                                
+                            <h5 class="font-bold lg:text-md">Jenna Sullivan</h5>
+                            <p>user@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="w-25 h-auto flex flex-row gap-2">                            
+                            <img class="h-auto w-12 object-contain rounded-full" src="/assets/woman-indu.png" alt="Anciano-perfil">
+                            <div class="flex flex-col">
+                            <h5 class="font-bold lg:text-md">Jenna Sullivan</h5>
+                            <p>user@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="w-25 h-auto flex flex-row gap-2">
+                            <h2 class="text-orange-400 text-md lg:text-lg whitespace-nowrap">Todos los conductores</h2>
+                            <img class="h-auto w-6 object-contain rounded-full"  src="/assets/flecha-correcta.png" alt="flecha-correcta">
+                        </div>
                 </div>
 
-                <div class="bg-white h-48  w-48 p-5 gap-lg lg:h-96 lg:w-96 rounded-xl m-3">
-                    <h1 class="text-gray-700 text-left p-2 lg:text-lg lg:p-5 font-medium">Ultimos Viajes</h1>
-                    <p class="text-center  lg:p-5" > No hay Viajes Disponibles</p>
+                <div class="bg-gray-100 h-auto  min-w-72 p-5 gap-lg lg:h-96 lg:w-96 rounded-xl m-3">
+                    <h1 class="text-black text-left p-2 lg:text-lg lg:p-5 font-medium">Ultimos Viajes</h1>
+                    <div class="flex justify-center items-center min-h-48">
+                        <p class="text-black  lg:p-5 ">No hay Viajes Disponibles</p>
+                    </div>
                 </div>
             </div>
                 
