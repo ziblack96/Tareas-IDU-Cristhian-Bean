@@ -1,185 +1,202 @@
 <main class="bg-gray-50 min-h-screen">
 
     <header class="bg-gray-100 h-auto sm:w-full p-2">
-        <h1 class="font-semibold pl-5 text-sm lg:text-lg">Portal / Conductores</h1>
+        <h1 class="font-semibold pl-5 text-sm lg:text-lg">Portal/Conductores</h1>
         <h2 class="text-xl font-bold pl-6 pb-2 lg:text-3xl">Conductores</h2>
 
-        <div class="border border-gray-200 lg:w-72 flex flex-rows items-center justify-center  m-2 bg-white min-w-40 h-20 ">
-            <img class="bg-gray-700  h-16 w-auto object-contain rounded-full" src="/assets/PerfilConductorAutobus.png" alt="Perfil Conductor Autobus">
-                <div class="grid grid-cols-1 gap-2 pl-5 place-items-center">
-                    <h3 class="font-semibold text-md">Total de Conductores</h3>
-                    <p class="font-bold text-2xl">6</p>
-                </div>
+        <div
+            class="border border-gray-200 lg:w-72 flex flex-rows items-center justify-center  m-2 bg-white min-w-40 h-20 ">
+            <img class="bg-gray-700  h-16 w-auto object-contain rounded-full" src="/assets/PerfilConductorAutobus.png"
+                alt="Perfil Conductor Autobus">
+            <div class="grid grid-cols-1 gap-2 pl-5 place-items-center">
+                <h3 class="font-semibold text-md">Total de Conductores</h3>
+                <p class="font-bold text-2xl">6</p>
+            </div>
         </div>
     </header>
 
-    <section class="bg-white h-auto m-4 rounded-lg shadow-sm">
-        
-        <div class="flex flex-row justify-between pl-2 pr-2 h-16 items-center">
+    <section class="bg-white h-auto m-4 rounded-lg shadow-sm overflow-hidden">
+
+        <div class="flex flex-row justify-between px-4 h-16 items-center">
             <h4 class="font-semibold py-4">Lista de Conductores</h4>
-            <button class="bg-blue-600 text-white cursor-pointer rounded-full h-10 w-34 font-bold">Crear Conductor</button>
+            <button type="button" class="bg-blue-500 text-white cursor-pointer rounded-full 
+                        h-10 w-34 font-semibold hover:bg-blue-800">Crear Conductor</button>
         </div>
 
-        <div class="overflow-x-auto rounded-lg m-2">
-            
-            <table class="border border-black w-full lg:m-3 min-w-full">
-                <thead class="divide-x text-white font-bold">
-                    <tr class="text-center text-md">
-                        <th class="bg-blue-500 tracking-wider p-2 m-2 text-sm lg:text-xl">Correo</th>
-                        <th class="bg-blue-500 tracking-wider p-2 m-2 text-sm lg:text-xl">Nombre</th>
-                        <th class="bg-blue-500 tracking-wider p-2 m-2 text-sm lg:text-xl">ROL</th>
-                        <th class="bg-blue-500 tracking-wider p-2 m-2 text-sm lg:text-xl">Estado</th>
-                        <th class="bg-blue-500 tracking-wider p-2 m-2 text-sm lg:text-xl">Ultimo Fecha de Sesion</th>
-                        <th class="bg-blue-500 tracking-wider p-2 m-2 text-sm lg:text-xl">Fecha de Registro</th>
-                        <th class="bg-blue-500 tracking-wider p-2 m-2 text-blue-500">Changes perfil</th>
+        <div class="overflow-x-auto m-2 rounded-lg shadow-sm">
+
+            <table class="border border-gray-200 w-full">
+                <thead class="text-white font-bold border border-gray-200">
+                    <tr class="text-center sm:text-md lg:text-lg">
+                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">Correo</th>
+                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">Nombre</th>
+                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">ROL</th>
+                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">Estado</th>
+                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">ÚLTIMO INICIO DE SESIÓN</th>
+                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">FECHA DE REGISTRO</th>
+                        <th class="bg-blue-500 px-3 py-1 text-blue-500">Changes perfil</th>
                     </tr>
                 </thead>
-                <tbody class=" divide-y w-full divide-gray-200">
-                   <tr class="text-center hover:bg-gray-50">
-                        <td class=" tracking-wider p-2 font-semibold text-sm">student@unitec.edu</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm ">Estudiante UNITEC</td>
-                        <td class="tracking-wider p-2 font-semibold text-sm">Conductor</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <span class="bg-red-500 rounded-full text-black p-2"
-                            >Inactivo</span></td>
-                        <td class="tracking-wider p-2 font-semibold text-sm">23/12/2025 14:00:39</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23-Dic-2025</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">
-                            <div class="flex flex-row ">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/escribir.png" alt="Editar Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/restringido.png" alt="Restringido Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
-                            </div>
-                        </td>
-                    </tr>
-                    
-                    <tr class="text-center hover:bg-gray-50">
-                        <td class=" tracking-wider p-2 font-semibold text-sm">student@unitec.edu</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Estudiante UNITEC</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Conductor</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <span class="bg-lime-400 rounded-full text-black p-2 font-bold"
-                            >Activo</span>
-                        </td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23/12/2025 14:00:39</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23-Dic-2025</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <div class="flex flex-row">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/escribir.png" alt="Editar Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/restringido.png" alt="Restringido Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
-                            </div>
-                        </td>
-                    </tr>
-                    
-                        
-                    <tr class="text-center hover:bg-gray-50">
-                        <td class=" tracking-wider p-2 font-semibold text-sm">student@unitec.edu</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Estudiante UNITEC</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Conductor</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <span class="bg-lime-400 rounded-full text-black p-2 font-bold"
-                            >Activo</span>
-                        </td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23/12/2025 14:00:39</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23-Dic-2025</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <div class="flex flex-row ">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/escribir.png" alt="Editar Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/restringido.png" alt="Restringido Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
-                            </div>
-                        </td>
-                    </tr>
-                    
 
-                        
+                <tbody class="divide-y w-full divide-gray-200">
                     <tr class="text-center hover:bg-gray-50">
-                        <td class=" tracking-wider p-2 font-semibold text-sm">student@unitec.edu</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Estudiante UNITEC</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Conductor</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <span class="bg-lime-400 rounded-full text-black p-2 font-bold"
-                            >Activo</span>
+                        <td class="px-3 py-1 font-semibold text-sm">student@unitec.edu</td>
+                        <td class="px-3 py-1 font-semibold text-sm ">Estudiante UNITEC</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Conductor</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <button type="button" class="bg-red-500 rounded-full text-white p-2">Inactivo</button>
                         </td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23/12/2025 14:00:39</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23-Dic-2025</td>
-                        <td class="tracking-wider p-2 font-semibold text-sm">
-                            <div class="flex flex-row">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/escribir.png" alt="Editar Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/restringido.png" alt="Restringido Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
+                        <td class="px-3 py-1 font-semibold text-sm">23/12/2025 14:00:39</td>
+                        <td class="px-3 py-1 font-semibold text-sm">23-Dic-2025</td>
+                        <td class="px-3 py-1 font-semibold text-sm">
+                            <div class="flex flex-row place-items-center gap-2">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/escribir.png" alt="Editar Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/restringido.png" alt="Restringido Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
                             </div>
                         </td>
                     </tr>
-                    
 
-                        
                     <tr class="text-center hover:bg-gray-50">
-                        <td class=" tracking-wider p-2 font-semibold text-sm">student@unitec.edu</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Estudiante UNITEC</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Conductor</td>
-                        <td class=" tracking-wider p-2 font-semibold ">
-                            <span class="bg-lime-400 rounded-full text-black p-2 font-bold"
-                            >Activo</span>
+                        <td class="px-3 py-1 font-semibold text-sm">student@unitec.edu</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Estudiante UNITEC</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Conductor</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <button type="button"
+                                class="bg-lime-400 border border-lime-800 rounded-full text-black p-2 font-bold">Activo</button>
                         </td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23/12/2025 14:00:39</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23-Dic-2025</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <div class="flex flex-row">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/escribir.png" alt="Editar Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/restringido.png" alt="Restringido Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
+                        <td class="px-3 py-1 font-semibold text-sm">23/12/2025 14:00:39</td>
+                        <td class="px-3 py-1 font-semibold text-sm">23-Dic-2025</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <div class="flex flex-row place-items-center gap-2">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/escribir.png" alt="Editar Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/restringido.png" alt="Restringido Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
                             </div>
                         </td>
                     </tr>
-                    
 
-                        
+
                     <tr class="text-center hover:bg-gray-50">
-                        <td class=" tracking-wider p-2 font-semibold text-sm">student@unitec.edu</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Estudiante UNITEC</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Conductor</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <span class="bg-lime-400 rounded-full text-black p-2 font-bold"
-                            >Activo</span>
+                        <td class="px-3 py-1 font-semibold text-sm">student@unitec.edu</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Estudiante UNITEC</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Conductor</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <button type="button"
+                                class="bg-lime-400 border border-lime-800 rounded-full text-black p-2 font-bold">Activo</button>
                         </td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23/12/2025 14:00:39</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23-Dic-2025</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <div class="flex flex-row ">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/escribir.png" alt="Editar Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/restringido.png" alt="Restringido Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
+                        <td class="px-3 py-1 font-semibold text-sm">23/12/2025 14:00:39</td>
+                        <td class="px-3 py-1 font-semibold text-sm">23-Dic-2025</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <div class="flex flex-row place-items-center gap-2">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/escribir.png" alt="Editar Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/restringido.png" alt="Restringido Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
                             </div>
                         </td>
                     </tr>
-                    
 
-                        
                     <tr class="text-center hover:bg-gray-50">
-                        <td class=" tracking-wider p-2 font-semibold text-sm">student@unitec.edu</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Estudiante UNITEC</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">Conductor</td>
-                        <td class="tracking-wider p-2 font-semibold">
-                            <span class="bg-lime-400 rounded-full text-black p-2 font-bold"
-                            >Activo</span>
+                        <td class="px-3 py-1 font-semibold text-sm">student@unitec.edu</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Estudiante UNITEC</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Conductor</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <button
+                                class="bg-lime-400 border border-lime-800 rounded-full text-black p-2 font-bold">Activo</button>
                         </td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23/12/2025 14:00:39</td>
-                        <td class=" tracking-wider p-2 font-semibold text-sm">23-Dic-2025</td>
-                        <td class=" tracking-wider p-2 font-semibold">
-                            <div class="flex flex-row">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/escribir.png" alt="Editar Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/restringido.png" alt="Restringido Perfil">
-                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full" src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
+                        <td class="px-3 py-1 font-semibold text-sm">23/12/2025 14:00:39</td>
+                        <td class="px-3 py-1 font-semibold text-sm">23-Dic-2025</td>
+                        <td class="px-3 py-1 font-semibold text-sm">
+                            <div class="flex flex-row place-items-center gap-2">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/escribir.png" alt="Editar Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/restringido.png" alt="Restringido Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="text-center hover:bg-gray-50">
+                        <td class="px-3 py-1 font-semibold text-sm">student@unitec.edu</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Estudiante UNITEC</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Conductor</td>
+                        <td class="px-3 py-1 font-semibold ">
+                            <button type="button"
+                                class="bg-lime-400 border border-lime-800 rounded-full text-black p-2 font-bold">Activo</button>
+                        </td>
+                        <td class="px-3 py-1 font-semibold text-sm">23/12/2025 14:00:39</td>
+                        <td class="px-3 py-1 font-semibold text-sm">23-Dic-2025</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <div class="flex flex-row place-items-center gap-2">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/escribir.png" alt="Editar Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/restringido.png" alt="Restringido Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="text-center hover:bg-gray-50">
+                        <td class="px-3 py-1 font-semibold text-sm">student@unitec.edu</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Estudiante UNITEC</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Conductor</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <button type="button"
+                                class="bg-lime-400 border border-lime-800 rounded-full text-black p-2 font-bold">Activo</button>
+                        </td>
+                        <td class="px-3 py-1 font-semibold text-sm">23/12/2025 14:00:39</td>
+                        <td class="px-3 py-1 font-semibold text-sm">23-Dic-2025</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <div class="flex flex-row place-items-center gap-2">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/escribir.png" alt="Editar Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/restringido.png" alt="Restringido Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="text-center hover:bg-gray-50">
+                        <td class="px-3 py-1 font-semibold text-sm">student@unitec.edu</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Estudiante UNITEC</td>
+                        <td class="px-3 py-1 font-semibold text-sm">Conductor</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <button type="button"
+                                class="bg-lime-400 border border-lime-800 rounded-full text-black p-2 font-bold">Activo</button>
+                        </td>
+                        <td class="px-3 py-1 font-semibold text-sm">23/12/2025 14:00:39</td>
+                        <td class="px-3 py-1 font-semibold text-sm">23-Dic-2025</td>
+                        <td class="px-3 py-1 font-semibold">
+                            <div class="flex flex-row place-items-center gap-2">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/escribir.png" alt="Editar Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/restringido.png" alt="Restringido Perfil">
+                                <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
+                                    src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-</section>
+    </section>
 
-<div class="p-32"></div>
+    <div class="p-32"></div>
 
 </main>
