@@ -1,0 +1,74 @@
+<main class="w-full min-h-screen flex items-center justify-center">
+
+    <div class="bg-slate-400/50 flex flex-col min-h-96 lg:w-auto w-75 place-items-center rounded-xl py-5">
+        <img src="/assets/Login/carrito-de-compras.png" alt="Icono de carrito de compras" 
+            class="bg-white h-36 w-auto object-contain rounded-full">
+        <h1 class="text-white text-2xl font-bold py-4">Iniciar Sesion</h1>
+
+            <form class="flex flex-col gap-4 min-h-64 w-auto place-items-center "  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="flex flex-col">
+                    <label for="email" class=" my-2 block text-white text-sm font-bold">
+                        Correo Electronico <span [class.text-red-500]="isEmailRequired || isEmailInvalid">*</span>
+                    </label>
+                    <span class="absolute flex items-center py-11 px-2">                    
+                        <img src="/assets/Login/agregar-usuario (1).png" alt="Icono-de-usuario" class="h-6 w-auto object-contain rounded-full">
+                    </span>
+                    <input type="email"
+                    id="email" 
+                    name="email"
+                    formControlName="email"
+                    placeholder="Usuario"
+                    class="text-2xl bg-transparent placeholder-white text-white w-auto lg:w-75 pl-10 px-3 py-2 border rounded-lg"
+                    [class.border-red-500]="isEmailRequired || isEmailInvalid"
+                    />
+                </div>
+                    @if (isEmailRequired) {
+                        <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El correo electronico es requerido.</p>
+                    }
+                    @if (isEmailInvalid) {
+                        <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">Ingrese un correo electronico valido.</p>
+                    }
+
+                <div class="flex flex-col">
+                    <label for="password" class="my-2 block text-white text-sm font-bold">
+                        Contraseña <span [class.text-red-500]="isPasswordRequired">*</span>
+                    </label>
+                    
+                    <span class="absolute flex items-center py-11 px-2">                    
+                        <img src="/assets/Login/bloqueado.png" alt="Icono-de-contraseña-segura" class="h-6 w-auto object-contain rounded-full">
+                    </span>
+                    <input type="password"
+                    id="password" 
+                    name="password"
+                    formControlName="password"
+                    placeholder="Contraseña"
+                    class="bg-transparent text-white placeholder-white text-xl w-auto lg:w-75 pl-11 px-2 py-2 border rounded-lg focus:outline-none"
+                    [class.border-red-500]="isPasswordRequired"
+                    />
+
+                </div>
+
+                @if (isPasswordRequired) {
+                    <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">La contraseña es requerida.</p>
+                }
+
+                <div class="flex justify-center w-full col-span-full">
+                    <button type="submit" 
+                    class="bg-white hover:bg-cyan-500 text-black font-bold 
+                            py-4 px-4 rounded cursor-pointer">
+                        Iniciar Sesion
+                    </button>
+                </div>
+
+                <div class="flex justify-end w-full">
+                    <p class="text-md text-black font-semibold cursor-pointer hover:underline">Olvidastes tu contraseña?</p>
+                </div>
+
+            </form>
+    </div>
+
+    <div class="h-48 bg-gray-300">
+
+    </div>
+    
+</main>

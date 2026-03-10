@@ -1,0 +1,147 @@
+<main class="h-screen w-full">
+
+    <header class="bg-linear-to-r from-blue-200 via-gray-300 to-yellow-200 h-32 w-full"></header>
+
+    <section class="bg-white flex flex-col gap-5 lg:items-start place-items-center border-3  border-gray-300">
+
+        <div class="flex flex-row py-4 place-items-center lg:text-4xl">
+            <img src="/assets/Login/mujer.png" alt="Icono-perfil-mujer" class="h-36 w-auto object-contain rounded-full">
+            <div class="flex flex-col gap-3">
+                <h1 class="text-4xl font-bold">Alexa Rawles</h1>
+                <p class="text-xl font-semibold">alexarawles@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="place-items-center lg:w-full">
+
+            <form action="" class="bg-white rounded-lg shadow-xl min-w-96 lg:w-full p-5" [formGroup]="ProfileForm"
+                (ngSubmit)="onSubmit()">
+
+                <fieldset class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+
+                    <legend class="text-2xl mb-4 lg:col-span-2 font-bold">Datos Personales:</legend>
+
+                    <div name="FirstName" class="flex flex-col">
+                        <label class="py-2 font-semibold text-md" for="FirstName">Nombres:</label>
+                        <input type="text" placeholder="Ingrese sus nombres" id="FirstName" name="FirstName"
+                            formControlName="FirstName"
+                            class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+                            [class.border-red-500]="isFirstNameRequired || isFirstNameInvalid || isFirstNameShorthLength || isFirstNameLongthLength"
+                            />
+                            @if (isFirstNameRequired) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo nombre es requisito para completar el perfil..</p>
+                            }
+                            @if (isFirstNameInvalid) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo nombre no puede ser numero.</p>
+                            }
+                            @if (isFirstNameShorthLength) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo nombre no puede ser menos de 3 caracteres.</p>
+                            }
+                            @if (isFirstNameLongthLength) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo nombre no puede ser mas de 20 caracteres.</p>
+                            }
+                    </div>
+
+                    <div name="LastName" class="flex flex-col">
+                        <label class="py-2 font-semibold text-md" for="LastName">Apellidos:</label>
+                        <input type="text" placeholder="Ingrese sus apellidos" id="LastName" name="LastName" maxlength="21"
+                            class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+                            formControlName="LastName" 
+                            [class.border-red-500]="isLastNameRequired || isLastNameInvalid || isLastNameShorthLength || isLastNameLongthLength"  
+                        />
+                            @if (isLastNameRequired) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo apellido es requisito para completar el perfil.</p>
+                            }
+                            @if (isLastNameInvalid) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo apellido no puede ser numero.</p>
+                            }
+                            
+                            @if (isLastNameShorthLength) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo apellido no puede ser menos de 3 caracteres.</p>
+                            }
+                            @if (isLastNameLongthLength) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo apellido no puede ser mas de 20 caracteres.</p>
+                            }
+                    </div>
+
+                    <div name="PhoneNumber" class="flex flex-col">
+                        <label class="py-2 font-semibold text-md" for="PhoneNumber">Numero de telefono:</label>
+                        <input type="text" placeholder="+504-XXXX-XXXX" id="PhoneNumber" name="phoneNumber"
+                            class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+                            formControlName="PhoneNumber" 
+                            maxlength="9"
+                            [class.border-red-500]="isPhoneNumberRequired || isPhoneNumberInvalid"
+                        />
+                            @if (isPhoneNumberRequired) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo apellido es requisito para completar el perfil.</p>
+                            }
+                            @if (isPhoneNumberInvalid) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El formato de numero telefonico no es valido.</p>
+                            }
+                    </div>
+
+                    <div name="Email" class="flex flex-col">
+                        <label class="py-2 font-semibold text-md" for="Email">Correo Electronico:</label>
+                        <input type="email" placeholder="nombreapellido@gmail.com" id="Email" name="email"
+                            class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+                            formControlName="Email" 
+                            [class.border-red-500]="isEmailRequired || isEmailInvalid"
+                        />
+                        
+                        @if (isEmailRequired) {
+                        <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo correo electronico es requisito para completar el perfil.</p>
+                        }
+                        @if (isEmailInvalid) {
+                        <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo correo electronico es invalido.</p>
+                        }
+                    </div>
+
+
+
+                    <div name="IDNumber" class="flex flex-col">
+                        <label class="py-2 font-semibold text-md" for="IDNumber">Numero de Identidad (sin
+                            guiones):</label>
+                        <input type="text" placeholder="XXXX-XXXX-XXXXX" id="IDNumber" 
+                            class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+                            formControlName="IDNumber"
+                            [class.border-red-500]="isIDNumberRequired || isIDNumberInvalid"
+                            />
+                            @if (isIDNumberRequired) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El campo numero ID es requisito para completar el perfil.</p>
+                            }
+                            
+                            @if (isIDNumberInvalid) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">El numero ID ingresado es invalido.</p>
+                            }
+                    </div>
+
+                    <div name="BirthDate" class="flex flex-col">
+                        <label class="py-2 font-semibold text-md" for="BirthDate">Fecha de Nacimiento:</label>
+                        <input type="date" id="BirthDate" name="BirthDate" placeholder="Ingrese su fecha de nacimiento"
+                            class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+                            formControlName="BirthDate" min="1900-01-01" max="2026-3-8"
+                            [class.border-red-500]="isBirthDateRequired"
+                            />
+                            @if (isBirthDateRequired) {
+                            <p class="text-red-500 bg-white rounded-lg p-2 text-sm mt-1">La fecha de nacimiento no es correcta.</p>
+                            }
+                    </div>
+
+                    <div class="flex justify-center md:justify-end lg:justify-end w-full col-span-full">
+                        <button type="submit" class="bg-cyan-300 hover:bg-cyan-700 hover:text-white font-bold h-16
+                                    rounded-full cursor-pointer my-4 px-6">
+                            Guardar Registros
+                        </button>
+                    </div>
+
+                </fieldset>
+
+            </form>
+        </div>
+    </section>
+
+    <div class="h-48 bg-linear-to-r from-blue-200 via-gray-300 to-yellow-200">
+
+    </div>
+
+</main>
