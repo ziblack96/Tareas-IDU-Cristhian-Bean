@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { last } from 'rxjs';
+import { isAuthenticated } from '../../../signals/shared/app.signals';
 
 @Component({
   selector: 'app-edit',
@@ -11,6 +11,8 @@ import { last } from 'rxjs';
 export class Edit {
   private _formBuilder: FormBuilder = inject(FormBuilder);
 
+  
+  isUserLoggedIn = computed(() => isAuthenticated());
 
   ProfileForm: FormGroup = this._formBuilder.group({
     FirstName: ['', [Validators.required, Validators.minLength(3) ,Validators.maxLength(20), Validators.pattern('^[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]*$')]],
@@ -94,12 +96,17 @@ export class Edit {
   }
 
   get isBirthDateRequired(): boolean {
-    const BirthDateControl = this.ProfileForm.get('IDNumber');
+    const BirthDateControl = this.ProfileForm.get('BirthDate');
     return   BirthDateControl ? BirthDateControl.hasError('required') && BirthDateControl.touched : false;
   }
 
   onSubmit(): void {
     if(this.ProfileForm.valid) {
-      console.log('Save Changes Profile', this.ProfileForm.value);   
-    }}
+      isAuthenticated.set(true);
+      console.log('Guardar informacion del Perfil', this.ProfileForm.value); 
+    }
+    else{
+      console.log('Formulario vacio/incorrecta complete todos los campos faltantes');
+    }
+  }
 }

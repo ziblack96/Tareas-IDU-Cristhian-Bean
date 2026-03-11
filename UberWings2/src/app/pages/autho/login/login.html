@@ -1,6 +1,6 @@
 <main class="w-full min-h-screen flex items-center justify-center">
 
-    <div class="bg-slate-400/50 flex flex-col min-h-96 lg:w-auto w-75 place-items-center rounded-xl py-5">
+    <div class="bg-slate-800/30 flex flex-col min-h-96 lg:w-96 w-75 place-items-center rounded-xl py-10">
         <img src="/assets/Login/carrito-de-compras.png" alt="Icono de carrito de compras" 
             class="bg-white h-36 w-auto object-contain rounded-full">
         <h1 class="text-white text-2xl font-bold py-4">Iniciar Sesion</h1>
@@ -53,9 +53,10 @@
                 }
 
                 <div class="flex justify-center w-full col-span-full">
-                    <button type="submit" 
-                    class="bg-white hover:bg-cyan-500 text-black font-bold 
-                            py-4 px-4 rounded cursor-pointer">
+                    <button type="submit"
+                    [disabled]="loginForm.invalid"
+                    class="bg-white hover:bg-cyan-500 text-black font-bold
+                            py-4 px-4 rounded cursor-pointer disabled:cursor-not-allowed">
                         Iniciar Sesion
                     </button>
                 </div>

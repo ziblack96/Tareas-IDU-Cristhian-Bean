@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { isAuthenticated } from './signals/shared/app.signals';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('UberWings2');
+
 }

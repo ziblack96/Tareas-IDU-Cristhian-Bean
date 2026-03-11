@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { isAuthenticated } from '../../../signals/shared/app.signals';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 export class Login {
   private readonly _formBuilder: FormBuilder = inject(FormBuilder);
   private readonly _router: Router = inject(Router);
+
+  isUserLoggedIn = computed(() => isAuthenticated());
 
   loginForm: FormGroup = this._formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
@@ -34,7 +37,8 @@ export class Login {
   
   onSubmit(): void {
     if(this.loginForm.valid) {
-      console.log('Form Submitted', this.loginForm.value);
+      console.log('Usuario ingresado correctamente', this.loginForm.value);
+      isAuthenticated.set(true);
       this._router.navigate(['/Edit']);
     }
     else
