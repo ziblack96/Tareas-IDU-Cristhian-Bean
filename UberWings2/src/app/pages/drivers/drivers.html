@@ -4,13 +4,17 @@
         <h1 class="font-semibold pl-5 text-sm lg:text-lg">Portal/Conductores</h1>
         <h2 class="text-xl font-bold pl-6 pb-2 lg:text-3xl">Conductores</h2>
 
-        <div class="border border-gray-200 lg:w-72 flex flex-rows items-center justify-center  m-2 bg-white min-w-40 h-20 ">
-            <img class="bg-gray-700  h-16 w-auto object-contain rounded-full" src="/assets/PerfilConductorAutobus.png" alt="Perfil Conductor Autobus">
-                <div class="grid grid-cols-1 gap-2 pl-5 place-items-center">
-                    <h3 class="font-semibold text-md">Total de Conductores</h3>
-                    <p class="font-bold text-2xl">6</p>
-                </div>
-        </div>
+<!--Componente Reutilizable Total de Conductores-->
+
+        @for (dataPerfil of driver; track $index) {
+            <app-counter-card
+                [imgAvatar]="dataPerfil.imgAvatar"
+                [titulo]="dataPerfil.titulo"
+                [cantidadConductor]="dataPerfil.cantidadConductor"
+                >
+            </app-counter-card>
+        }
+        
     </header>
 
     <section class="bg-white h-auto m-4 rounded-lg shadow-sm overflow-hidden">
@@ -119,9 +123,12 @@
                         <td class="px-3 py-1 font-semibold text-sm">student@unitec.edu</td>
                         <td class="px-3 py-1 font-semibold text-sm">Estudiante UNITEC</td>
                         <td class="px-3 py-1 font-semibold text-sm">Conductor</td>
-                        <td class="px-3 py-1 font-semibold ">
+                        <td class="px-3 py-1 font-semibold">
                             <button type="button" class="bg-lime-400 border border-lime-800 rounded-full text-black p-2 font-bold"
                             >Activo</button>
+                            <app-status-badge>
+                                
+                            </app-status-badge>
                         </td>
                         <td class="px-3 py-1 font-semibold text-sm">23/12/2025 14:00:39</td>
                         <td class="px-3 py-1 font-semibold text-sm">23-Dic-2025</td>
