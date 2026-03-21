@@ -1,65 +1,62 @@
-<main  name="MainContenedor " class="bg-gray-50 min-h-screen w-full">
+<main name="MainContenedor " class="bg-gray-50 min-h-screen w-full">
 
-    <nav name="Navigator"  class="bg-white m-0 w-full flex items-center justify-between p-2 h-auto">
-        <div class="flex items-center gap-2"> 
+    <nav name="Navigator" class="bg-white m-0 w-full flex items-center justify-between p-2 h-auto">
+        <div class="flex items-center gap-2">
             <img class="h-8 w-auto object-contain rounded-full" src="/assets/gente.png" alt="ImagenPerfil">
             <h1 class="text-sm font-medium">Dominique Ch.</h1>
-            <img class="h-auto w-4 object-contain rounded-full"  src="/assets/flecha-hacia-abajo.png" alt="flecha-hacia-abajo-perfil">
+            <img class="h-auto w-4 object-contain rounded-full" src="/assets/flecha-hacia-abajo.png"
+                alt="flecha-hacia-abajo-perfil">
         </div>
-        <img class="h-8 w-auto object-contain rounded-full" src="/assets/campana-de-notificacion.png" alt="Notificaciones-Campana">
+        <img class="h-8 w-auto object-contain rounded-full" src="/assets/campana-de-notificacion.png"
+            alt="Notificaciones-Campana">
     </nav>
 
-    <!--Componente Reutilizable 3 Cards-->
+    <!--Componente Reutilizable StatCardComponent-->
 
-        <div class="flex flex-row justify-center items-center h-full gap-5 m-2">
-                    
-                @for (data of card; track $index) {
-                        <app-stat-card 
-                        [tituloCard]="data.tituloCard"
-                        [numeroCard]="data.numeroCard"
-                        >
-                        </app-stat-card>
-                }                                
-        </div>
+    <div class="flex flex-row justify-center items-center h-full gap-5 m-2">
+
+        @for (data of card; track $index) {
+        <app-stat-card [tituloCard]="data.tituloCard" [numeroCard]="data.numeroCard">
+        </app-stat-card>
+        }
+    </div>
 
 
-    <div class="flex flex-row justify-center items-center h-full gap-5 m-2" >
+    <div class="flex flex-row justify-center items-center h-full gap-5 m-2">
 
-            <div class="flex flex-col lg:flex-row lg:justify-between">
+        <div class="flex flex-col lg:flex-row lg:justify-between">
 
-                    <div class="bg-gray-100 h-auto min-w-72 p-5 gap-lg lg:w-96 rounded-xl m-3
+            <div class="bg-gray-100 h-auto min-w-72 p-5 gap-lg lg:w-96 rounded-xl m-3
                                 flex flex-col gap-5">
 
-                        <div class="flex flex-row justify-between">
-                            <h1 class="text-black font-semibold lg:text-3xl">Conductores</h1>
-                            <img class="h-auto w-6 object-contain rounded-full"  src="/assets/flecha-hacia-abajo.png" alt="flecha-hacia-abajo-conductores">
-                        </div>
-
-        <!--Componente Reutilizable Perfiles de Usuario-->
-
-                        @for (cardUser of cardPerfil; track $index) {   
-                            <app-driver-card
-                                [imgURL]="cardUser.imgURL"
-                                [tituloUser]="cardUser.tituloUser"
-                                [correoUser]="cardUser.correoUser"
-                                >
-                            </app-driver-card>
-                            }
-
-                        <div class="w-25 h-auto flex flex-row gap-2">
-                            <h2 class="text-orange-400 text-md lg:text-lg whitespace-nowrap">Todos los conductores</h2>
-                            <img class="h-auto w-6 object-contain rounded-full"  src="/assets/flecha-correcta.png" alt="flecha-correcta">
-                        </div>
-
-                    </div>
-
+                <div class="flex flex-row justify-between">
+                    <h1 class="text-black font-semibold lg:text-3xl">Conductores</h1>
+                    <img class="h-auto w-6 object-contain rounded-full" src="/assets/flecha-hacia-abajo.png"
+                        alt="flecha-hacia-abajo-conductores">
                 </div>
 
-                <div class="bg-gray-100 h-auto  min-w-72 p-5 gap-lg lg:h-96 lg:w-96 rounded-xl m-3">
-                    <h1 class="text-black text-left p-2 lg:text-2xl font-medium">Ultimos Viajes</h1>
-                    <div class="flex justify-center items-center min-h-48">
-                        <p class="text-black  lg:p-5 ">No hay Viajes Disponibles</p>
-                    </div>
+                <!--Componente Reutilizable DriverCardComponent-->
+
+                @for (cardUser of cardPerfil; track $index) {
+                <app-driver-card [imgURL]="cardUser.imgURL" [tituloUser]="cardUser.tituloUser"
+                    [correoUser]="cardUser.correoUser">
+                </app-driver-card>
+                }
+
+                <div class="w-25 h-auto flex flex-row gap-2">
+                    <h2 class="text-orange-400 text-md lg:text-lg whitespace-nowrap">Todos los conductores</h2>
+                    <img class="h-auto w-6 object-contain rounded-full" src="/assets/flecha-correcta.png"
+                        alt="flecha-correcta">
                 </div>
             </div>
+
+        </div>
+
+        <div class="bg-gray-100 h-auto  min-w-72 p-5 gap-lg lg:h-96 lg:w-96 rounded-xl m-3">
+            <h1 class="text-black text-left p-2 lg:text-2xl font-medium">Ultimos Viajes</h1>
+            <div class="flex justify-center items-center min-h-48">
+                <p class="text-black  lg:p-5 ">No hay Viajes Disponibles</p>
+            </div>
+        </div>
+    </div>
 </main>

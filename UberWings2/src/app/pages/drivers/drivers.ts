@@ -16,14 +16,27 @@ export interface DriversData{
 })
 export class Drivers {
 
-  driver: DriversData[]= [
-    {
-      imgAvatar:"/assets/PerfilConductorAutobus.png",
-      titulo:"Total de Conductores",
-      cantidadConductor: 6
-    }
+  driver: DriversData[]= [ { imgAvatar:"/assets/PerfilConductorAutobus.png", titulo:"Total de Conductores", cantidadConductor: 6 } ];
+
+  driverTable = [
+    {correo:"student@unitec.edu",nombre:"Estudiante UNITEC",rol:"Conductor",estado:"Inactivo",inicioSesion:"23/12/2025 14:00:39",fechaRegistro:"23-Dic-2025"},
+    {correo:"student@unitec.edu",nombre:"Estudiante UNITEC",rol:"Conductor",estado:"Activo",inicioSesion:"23/12/2025 14:00:39",fechaRegistro:"23-Dic-2025"},
+    {correo:"student@unitec.edu",nombre:"Estudiante UNITEC",rol:"Conductor",estado:"Activo",inicioSesion:"23/12/2025 14:00:39",fechaRegistro:"23-Dic-2025"},
+    {correo:"student@unitec.edu",nombre:"Estudiante UNITEC",rol:"Conductor",estado:"Activo",inicioSesion:"23/12/2025 14:00:39",fechaRegistro:"23-Dic-2025"},
+    {correo:"student@unitec.edu",nombre:"Estudiante UNITEC",rol:"Conductor",estado:"Activo",inicioSesion:"23/12/2025 14:00:39",fechaRegistro:"23-Dic-2025"},
+    {correo:"student@unitec.edu",nombre:"Estudiante UNITEC",rol:"Conductor",estado:"Activo",inicioSesion:"23/12/2025 14:00:39",fechaRegistro:"23-Dic-2025"},
+    {correo:"student@unitec.edu",nombre:"Estudiante UNITEC",rol:"Conductor",estado:"Activo",inicioSesion:"23/12/2025 14:00:39",fechaRegistro:"23-Dic-2025"}
   ];
 
-  
 
+  SetColor(estado:string): string{
+    switch(estado){
+      case 'Activo':
+        return 'bg-lime-500';
+      case 'Inactivo':
+        return 'bg-red-500';
+      default:
+        return 'bg-gray-100';
+    }
+  } 
 }

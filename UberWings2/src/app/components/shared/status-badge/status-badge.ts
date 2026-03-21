@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'app-status-badge',
@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './status-badge.css',
 })
 export class StatusBadge {
-
-      
-
+      @Input() estado!: string;
+      @Input() color!: string;
 }
