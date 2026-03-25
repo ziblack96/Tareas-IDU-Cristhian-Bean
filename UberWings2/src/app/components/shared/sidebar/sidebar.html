@@ -2,8 +2,11 @@
 
     <div class="grid grid-rows-[auto_1fr_auto] top-0 h-screen w-64 border-r-15 border-gray-300">
 
-        <header class="bg-gray-200 h-auto w-full sticky top-0">
-                <h1 class="text-lg p-2">UberWings2</h1>
+        <header class="bg-gray-200 h-auto w-full sticky top-0 flex flex-row">
+            <button type="button" routerLink="/home" aria-label="Ir a la pagina principal de UBERWINGS2">
+                <img src="assets/Icono-Wings2/UberWIngs2.png" class="h-auto w-12 object-contain rounded-full" 
+                            alt="Icono-UberWings2"></button> 
+                <h1 class="text-lg p-2 hover:underline">UberWings2</h1>
         </header>
 
         <nav class="grid grid-rows-[repeat(auto-fill,minmax(45px,1fr))] gap-2 m-2">
@@ -31,7 +34,7 @@
 
         <footer class="flex flex-row gap-2 p-5 cursor-pointer">
             <img class="h-6 w-auto object-contain rounded-3xl bg-white" src="/assets/cerrar-sesion.png" alt="Cerrar Sesion Seccion Sidebar">
-            <p class="text-red-700 font-bold text-lg">Cerrar Sesion</p>
+            <p class="text-red-700 font-bold text-lg hover:underline">Cerrar Sesion</p>
         </footer>
     </div>
 </main>

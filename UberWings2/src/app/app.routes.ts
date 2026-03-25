@@ -13,43 +13,43 @@ export const routes: Routes = [
 
   //Dashboard Pagina #1
   {
-    path: 'Dashboard',
+    path: 'dashboard',
     loadComponent: () => import('./pages/dashboard/dashboard').then((m) => m.Dashboard),
   },
 
   //Sidebar Global Pagina #2
   {
-    path: 'Sidebar',
+    path: 'sidebar',
     loadComponent: () => import('./components/shared/sidebar/sidebar').then((m) => m.Sidebar),
   },
 
   //Listado de Conductores Pagina #3
   {
-    path: 'Drivers',
+    path: 'drivers',
     loadComponent: () => import('./pages/drivers/drivers').then((m) => m.Drivers),
   },
 
-  //Listado de Conductores Pagina #4
+  //Card View de Monitoreo Pagina #4
   {
-    path: 'Drivercard',
+    path: 'drivercard',
     loadComponent: () => import('./pages/drivers-cards/drivers-cards').then((m) => m.DriversCards),
   },
 
-  //Listado de Conductores Pagina #5
+  //Perfil de Usuario Pagina #5
   { 
     path: 'Edit', 
     loadComponent: () => import('./pages/profile/edit/edit').then((m) => m.Edit) 
   },
 
-  {
-    path: 'earnings',
-    loadComponent: () => import('./pages/rides/earnings/earnings').then((m) => m.Earnings),
-  },
+{
+  path: 'earnings',
+  loadComponent: () => import('./pages/rides/earnings/earnings').then((m) => m.Earnings),
+},
 
-  {
-    path: 'login-page',
-    loadComponent: () => import('./pages/login-page/login-page').then((m) => m.LoginPage),
-  },
+{
+  path: 'login-page',
+  loadComponent: () => import('./pages/login-page/login-page').then((m) => m.LoginPage),
+},
 
   
 

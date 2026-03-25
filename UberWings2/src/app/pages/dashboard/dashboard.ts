@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StatCard } from '../../components/dashboard/stat-card/stat-card';
 import { DriverCard } from '../../components/dashboard/driver-card/driver-card';
+import { RouterLink } from "@angular/router";
 
 export interface CardData {
   tituloCard: string;
@@ -15,7 +16,7 @@ export interface CardUser {
 
 @Component({
   selector: 'app-dashboard',
-  imports: [StatCard, DriverCard],
+  imports: [StatCard, DriverCard, RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
