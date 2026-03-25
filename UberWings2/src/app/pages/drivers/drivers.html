@@ -1,80 +1,89 @@
 <main class="bg-gray-50 min-h-screen">
+  <header class="bg-gray-100 h-auto sm:w-full p-2">
+    <h1 class="font-semibold pl-5 text-sm lg:text-lg">Portal/Conductores</h1>
+    <h2 class="text-xl font-bold pl-6 pb-2 lg:text-3xl">Conductores</h2>
 
-    <header class="bg-gray-100 h-auto sm:w-full p-2">
-        <h1 class="font-semibold pl-5 text-sm lg:text-lg">Portal/Conductores</h1>
-        <h2 class="text-xl font-bold pl-6 pb-2 lg:text-3xl">Conductores</h2>
+    <!--Componente Reutilizable CounterCardComponent-->
 
-        <!--Componente Reutilizable CounterCardComponent-->
+    @for (dataPerfil of driver; track $index) {
+      <app-counter-card
+        [imgAvatar]="dataPerfil.imgAvatar"
+        [titulo]="dataPerfil.titulo"
+        [cantidadConductor]="dataPerfil.cantidadConductor"
+      >
+      </app-counter-card>
+    }
+  </header>
 
-        @for (dataPerfil of driver; track $index) {
-        <app-counter-card [imgAvatar]="dataPerfil.imgAvatar" [titulo]="dataPerfil.titulo"
-            [cantidadConductor]="dataPerfil.cantidadConductor">
-        </app-counter-card>
-        }
+  <section class="bg-white h-auto m-4 rounded-lg shadow-sm overflow-hidden">
+    <div class="flex flex-row justify-between px-4 h-16 items-center">
+      <h4 class="font-semibold py-4">Lista de Conductores</h4>
+      <button
+        type="button"
+        class="bg-indigo-600 text-white cursor-pointer rounded-full h-10 w-34 font-semibold hover:bg-blue-800"
+      >
+        Crear Conductor
+      </button>
+    </div>
 
-    </header>
+    <div class="overflow-x-auto m-2 rounded-lg shadow-sm">
+      <table class="border border-gray-200 w-full">
+        <thead class="text-white font-bold border border-gray-200">
+          <tr class="text-center sm:text-md lg:text-lg">
+            <th class="bg-indigo-600 px-3 py-1 text-sm lg:text-xl">Correo</th>
+            <th class="bg-indigo-600 px-3 py-1 text-sm lg:text-xl">Nombre</th>
+            <th class="bg-indigo-600 px-3 py-1 text-sm lg:text-xl">ROL</th>
+            <th class="bg-indigo-600 px-3 py-1 text-sm lg:text-xl">Estado</th>
+            <th class="bg-indigo-600 px-3 py-1 text-sm lg:text-xl">ÚLTIMO INICIO DE SESIÓN</th>
+            <th class="bg-indigo-600 px-3 py-1 text-sm lg:text-xl">FECHA DE REGISTRO</th>
+            <th class="bg-indigo-600 px-3 py-1 text-indigo-600">Changes perfil</th>
+          </tr>
+        </thead>
 
-    <section class="bg-white h-auto m-4 rounded-lg shadow-sm overflow-hidden">
+        <!--Componente Reutilizable StatusBadgeComponent-->
+        <tbody class="divide-y w-full divide-gray-200">
+          @for (table of driverTable; track $index) {
+            <tr class="text-center hover:bg-gray-50">
+              <td class="px-3 py-1 font-semibold text-sm">{{ table.correo }}</td>
+              <td class="px-3 py-1 font-semibold text-sm">{{ table.nombre }}</td>
+              <td class="px-3 py-1 font-semibold text-sm">{{ table.rol }}</td>
+              <td class="px-3 py-1 font-semibold">
+                <app-status-badge [estado]="table.estado" [color]="SetColor(table.estado)">
+                </app-status-badge>
+              </td>
+              <td class="px-3 py-1 font-semibold text-sm">{{ table.inicioSesion }}</td>
+              <td class="px-3 py-1 font-semibold text-sm">{{ table.fechaRegistro }}</td>
+              <td class="px-3 py-1 font-semibold text-sm">
+                <div class="flex flex-row place-items-center gap-2">
+                  <button class="rounded-full text-black p-2 font-bold h-10 w-auto">
+                    <img
+                      class="cursor-pointer h-8 w-auto object-contain rounded-full"
+                      src="/assets/escribir.png"
+                      alt="Editar Perfil"
+                    />
+                  </button>
+                  <button class="flex flex-row place-items-center gap-2">
+                    <img
+                      class="cursor-pointer h-8 w-auto object-contain rounded-full"
+                      src="/assets/restringido.png"
+                      alt="Restringido Perfil"
+                    />
+                  </button>
+                  <button class="flex flex-row place-items-center gap-2">
+                    <img
+                      class="cursor-pointer h-8 w-auto object-contain rounded-full"
+                      src="/assets/papelera-de-reciclaje.png"
+                      alt="Borrar Perfil"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-        <div class="flex flex-row justify-between px-4 h-16 items-center">
-            <h4 class="font-semibold py-4">Lista de Conductores</h4>
-            <button type="button" class="bg-blue-500 text-white cursor-pointer rounded-full 
-                        h-10 w-34 font-semibold hover:bg-blue-800">Crear Conductor</button>
-        </div>
-
-        <div class="overflow-x-auto m-2 rounded-lg shadow-sm">
-
-            <table class="border border-gray-200 w-full">
-                <thead class="text-white font-bold border border-gray-200">
-
-                    <tr class="text-center sm:text-md lg:text-lg">
-                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">Correo</th>
-                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">Nombre</th>
-                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">ROL</th>
-                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">Estado</th>
-                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">ÚLTIMO INICIO DE SESIÓN</th>
-                        <th class="bg-blue-500 px-3 py-1 text-sm lg:text-xl">FECHA DE REGISTRO</th>
-                        <th class="bg-blue-500 px-3 py-1 text-blue-500">Changes perfil</th>
-                    </tr>
-                </thead>
-
-
-                <!--Componente Reutilizable StatusBadgeComponent-->
-                <tbody class="divide-y w-full divide-gray-200">
-                    @for (table of driverTable; track $index){
-                    <tr class="text-center hover:bg-gray-50">
-                        <td class="px-3 py-1 font-semibold text-sm">{{table.correo}}</td>
-                        <td class="px-3 py-1 font-semibold text-sm ">{{table.nombre}}</td>
-                        <td class="px-3 py-1 font-semibold text-sm">{{table.rol}}</td>
-                        <td class="px-3 py-1 font-semibold">
-                            <app-status-badge [estado]="table.estado" [color]="SetColor(table.estado)">
-                            </app-status-badge>
-                        </td>
-                        <td class="px-3 py-1 font-semibold text-sm">{{table.inicioSesion}}</td>
-                        <td class="px-3 py-1 font-semibold text-sm">{{table.fechaRegistro}}</td>
-                        <td class="px-3 py-1 font-semibold text-sm">
-                            <div class="flex flex-row place-items-center gap-2">
-                                <button class="rounded-full text-black p-2 font-bold h-10 w-auto">
-                                    <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
-                                        src="/assets/escribir.png" alt="Editar Perfil">
-                                </button>
-                                <button class="flex flex-row place-items-center gap-2">
-                                    <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
-                                        src="/assets/restringido.png" alt="Restringido Perfil">
-                                </button>
-                                <button class="flex flex-row place-items-center gap-2">
-                                    <img class="cursor-pointer h-6 w-auto object-contain rounded-full"
-                                        src="/assets/papelera-de-reciclaje.png" alt="Borrar Perfil">
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <div class="p-32"></div>
-
+  <div class="p-32"></div>
 </main>
