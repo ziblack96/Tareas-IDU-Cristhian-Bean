@@ -3,6 +3,7 @@ import { Dashboard } from './pages/dashboard/dashboard';
 import { Earnings } from './pages/rides/earnings/earnings';
 import { Home } from './pages/home/home';
 import { Sidebar } from './components/shared/sidebar/sidebar';
+import { Drivers } from './pages/drivers/drivers';
 
 export const routes: Routes = [
 
@@ -12,6 +13,8 @@ export const routes: Routes = [
 
     {  path: 'dashboard', component: Dashboard},
 
-    {  path:  'sidebar', component: Sidebar}
+    {  path:  'sidebar', component: Sidebar},
+
+    {  path: 'drivers', component: Drivers}
 
 ];
