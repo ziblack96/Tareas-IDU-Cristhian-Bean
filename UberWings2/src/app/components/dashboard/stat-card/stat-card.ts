@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CardData } from '../../../pages/dashboard/dashboard';
 
 @Component({
   selector: 'app-stat-card',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './stat-card.css',
 })
 export class StatCard {
-
+    @Input() tituloCard!: string;
+    @Input() numeroCard!: number;
 }
