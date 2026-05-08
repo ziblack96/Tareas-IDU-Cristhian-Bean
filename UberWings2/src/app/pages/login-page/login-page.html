@@ -1,0 +1,19 @@
+<h1>Practicing Foro #4</h1>
+
+<h2>Ejercio 1 Date / Interpolacion</h2>
+
+<p>{{ vDate | date:'dd/MM/yyyy' }}</p>
+
+<h3>Ejercicio 2 String Number / String Interpolacion</h3>
+
+<p>{{vStringNumber | number: '1.2-2' }}</p>
+
+<h4>Ejercicio 3 Imagen / Property Binding</h4>
+
+<img [src]="vImagen" alt="ImagenPerfilConductor" class="rounded-full w-16 h-16 m-2">
+
+<h5>Ejercicio 4 NumeroImpart / Event Binding</h5>
+
+<button type="button" (click)="Incrementar_Numero()" 
+        class="bg-lime-200 h-12 w-32 rounded-full"> Incrementar Numero </button>
+        <span class="m-4 text-2xl">{{vNumeroImpar}}</span>

@@ -1,0 +1,73 @@
+<main name="MainContenedor " class="bg-gray-50 min-h-screen w-full">
+
+    <nav name="Navigator" class="bg-white m-0 w-full flex items-center justify-between p-2 h-auto">
+        <div class="flex items-center gap-2">
+            <img class="h-8 w-auto object-contain rounded-full" src="/assets/gente.png" alt="ImagenPerfil">
+            <h1 class="text-sm font-medium">Dominique Ch.</h1>
+            <img class="h-auto w-4 object-contain rounded-full" src="/assets/flecha-hacia-abajo.png"
+                alt="flecha-hacia-abajo-perfil">
+        </div>
+        <img class="h-8 w-auto object-contain rounded-full" src="/assets/campana-de-notificacion.png"
+            alt="Notificaciones-Campana">
+    </nav>
+
+    <section class="bg-lime-300 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5
+                    place-items-center">
+
+
+        @for (Driver of lista_drivers; track Driver.id){
+        <div name="card" class="bg-white border border-gray-100 rounded-xl
+                        min-h-56 w-full m-5 flex flex-row p-4">
+
+            <div name="left-card-side" class="flex flex-col items-center justify-center w-1/3 gap-2">
+                <img [src]="Driver.avatar_Url" alt="Avatar-Conductor" class="h-16 w-16 object-contain rounded-full">
+                <img src="/assets/Drivers/clasificacion.png" alt="valoracion-Estrellas-4.5"
+                    class="h-12 w-auto object-contain rounded-full">
+                <p class="text-black font-semibold sm:text-sm ">{{ Driver.rating | number: '1.1-1'}} / {{
+                    Driver.total_reviews | number: '1.3-3'}}</p>
+            </div>
+
+            <div name="right-card-side" class="flex flex-col flex-1 justify-center w-full gap-2">
+
+                <div name="top-card" class="text-black h-auto flex flex-row justify-between">
+                    <h1 class="text-md font-semibold">{{Driver.name}}</h1>
+                    <div class="flex flex-row gap-2 items-center">
+                        <img class="h-5 object-contain rounded-full cursor-pointer" src="/assets/Drivers/puntos.png"
+                            alt="Detalles 3 puntos">
+                        <img class="h-5 object-contain rounded-full cursor-pointer" src="/assets/Drivers/flecha-correcta.png"
+                            alt="Flecha mayor informacion">
+                    </div>
+                </div>
+
+                <div name="main-info-card" class="h-auto lg:w-auto flex flex-col text-left gap-2">
+                    <div class="flex flex-row gap-2">
+                        <img src="/assets/Drivers/carro.png" alt="car-info-icon"
+                            class="h-4 w-auto object-contain rounded-full">
+                        <p class="text-black font-semibold sm:text-sm ">{{Driver.car_Model}}</p>
+                    </div>
+                    <div class="flex flex-row gap-2">
+                        <img src="/assets/Drivers/telefono.png" alt="Numero de telefono"
+                            class="h-4 w-auto object-contain rounded-full">
+                        <p class="text-black font-semibold sm:text-sm ">{{Driver.phone}}</p>
+                    </div>
+                    <div class="flex flex-row gap-2">
+                        <img src="/assets/Drivers/ubicacion.png" alt="Ubicacion-Conductor"
+                            class="h-4 w-auto object-contain rounded-full">
+                        <p class="text-black font-semibold sm:text-sm ">{{Driver.location}}</p>
+                    </div>
+                    <button type="button" class="bg-green-100 text-green-900 cursor-pointer
+                                  hover:bg-green-600 hover:text-white h-8 min-w-32 lg:w-full font-semibold rounded-full 
+                                    px-3 ease-in-out">On the way to destination</button>
+                </div>
+            </div>
+        </div>
+        } @empty{
+        <div class="flex justify-center items-center rounded-lg  border-2 border-green-400">
+            <p class="text-black sm:text-md md:text-lg lg:text-2xl m-5">
+                No hay conductores disponibles</p>
+        </div>
+        }
+
+    </section>
+
+</main>
