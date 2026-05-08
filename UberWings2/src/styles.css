@@ -1,3 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+
+@theme{
+
+    --color-customRed-150: #ffe5e5;
+    --color-customRed-340: #ffb3b3;
+    --color-customRed-530: #ff8080;
+    --color-customRed-720: #ff4d4d;
+    --color-customRed-910: #ff1a1a;
+
+    --spacing-72: 25rem;
+    
+    --breakpoint-apple-watch: 352px;
+
+    --breakpoint-xs: 475px;
+}
