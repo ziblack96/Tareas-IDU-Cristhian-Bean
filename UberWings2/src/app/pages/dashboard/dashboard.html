@@ -1,7 +1,10 @@
-<main aria-label="MainContenedor " class="bg-gray-50 min-h-screen w-full">  
+<main aria-label="MainContenedor " class="bg-gray-50 min-h-screen w-full">
   <nav aria-label="Navigator" class="bg-white w-full h-auto flex items-center justify-between p-2">
     <div class="flex items-center gap-2">
-      <button class="rounded-lg cursor-pointer hover:bg-lime-400" aria-label="Cambiar Imagen del perfil">
+      <button
+        class="rounded-lg cursor-pointer hover:bg-lime-400"
+        aria-label="Cambiar Imagen del perfil"
+      >
         <img
           class="h-8 w-auto object-contain"
           src="/assets/gente.png"
@@ -10,8 +13,10 @@
         />
       </button>
       <h1 class="text-lg lg:text-lg font-bold hover:underline cursor-pointer">Dominique Ch.</h1>
-      <button aria-label="Revisar Informacion del Perfil de Dominique CH."
-        class="hover:bg-lime-200 rounded-full">
+      <button
+        aria-label="Revisar Informacion del Perfil de Dominique CH."
+        class="hover:bg-lime-200 rounded-full"
+      >
         <img
           class="h-auto w-6 object-contain rounded-full"
           src="/assets/flecha-hacia-abajo.png"
@@ -19,7 +24,10 @@
         />
       </button>
     </div>
-    <button class="rounded-full px-2 cursor-pointer hover:bg-lime-200" aria-label="Campana de Notificaciones de Usuario">
+    <button
+      class="rounded-full px-2 cursor-pointer hover:bg-lime-200"
+      aria-label="Campana de Notificaciones de Usuario"
+    >
       <img
         class="h-8 w-auto object-contain rounded-full"
         src="/assets/campana-de-notificacion.png"
@@ -30,16 +38,17 @@
 
   <!--Componente Reutilizable StatCardComponent-->
 
-    <h2 class="text-black text-center text-4xl my-2 font-black">Datos de Conductores</h2>
+  <h2 class="text-black text-center text-4xl my-2 font-black">Datos de Conductores</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full m-2 justify-center">
-      @for (data of card; track $index) {
-        <app-stat-card [tituloCard]="data.tituloCard" [numeroCard]="data.numeroCard">
-        </app-stat-card>
-      }
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full m-2 justify-center">
+    @for (data of card; track $index) {
+      <app-stat-card [tituloCard]="data.tituloCard" [numeroCard]="data.numeroCard"> </app-stat-card>
+    }
+  </div>
 
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 h-full gap-5 m-2 justify-items-center">
+  <section
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 h-full gap-5 m-2 justify-items-center"
+  >
     <div class="flex flex-col lg:flex-row">
       <div
         class="bg-gray-100 border-lime-200 border-2 flex flex-col min-w-72 lg:w-96 rounded-xl p-5"
@@ -73,8 +82,7 @@
 
         <button
           aria-label="Enlace para ver todos los conductores disponibles"
-          class="w-auto h-auto cursor-pointer flex flex-row justify-end items-center gap-2
-                 hover:bg-lime-200 rounded-full p-3"
+          class="w-auto h-auto cursor-pointer flex flex-row justify-end items-center gap-2 hover:bg-lime-200 rounded-full p-3"
           routerLink="/drivers"
         >
           Todos los conductores<img
