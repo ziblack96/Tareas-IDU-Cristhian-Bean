@@ -1,37 +1,40 @@
 <main name="sidebar" class="bg-gray-200 h-screen w-screen">
 
-    <div class="grid grid-rows-[auto_1fr_auto] top-0 h-screen w-64">
+    <div class="grid grid-rows-[auto_1fr_auto] top-0 h-screen w-64 border-r-15 border-gray-300">
 
-        <header class="bg-gray-200 h-auto w-full sticky top-0">
-                <h1 class="text-lg p-2">UberWings2</h1>
+        <header class="bg-gray-200 h-auto w-full sticky top-0 flex flex-row">
+            <button type="button" routerLink="/home" aria-label="Ir a la pagina principal de UBERWINGS2">
+                <img src="assets/Icono-Wings2/UberWIngs2.png" class="h-auto w-12 object-contain rounded-full" 
+                            alt="Icono-UberWings2"></button> 
+                <h1 class="text-lg p-2 hover:underline">UberWings2</h1>
         </header>
 
-        <section class="grid grid-rows-[repeat(auto-fill,minmax(40px,1fr))] gap-2 p-2">
+        <nav class="grid grid-rows-[repeat(auto-fill,minmax(45px,1fr))] gap-2 m-2">
                 
-                <div class="flex flex-row gap-2 hover:bg-cyan-300 hover:rounded-full cursor-pointer">
-                    <img class="h-8 w-auto object-contain rounded-full" src="/assets/dashboard.png" alt="Dashboard">
-                    <p class="font-semibold">Dashboard</p>
-                </div>
+                <button aria-label="Ir a Pagina de Dashboard" class="flex flex-row p-2  hover:bg-cyan-300 hover:rounded-full cursor-pointer">
+                    <img aria-label="Seccion de Dashboard" class="h-8 w-auto object-contain rounded-full" src="/assets/dashboard.png" alt="Dashboard de Sidebar">
+                    <p class="mx-3 font-semibold">Dashboard</p>
+                </button>
 
-                <div class="flex flex-row gap-2 hover:bg-cyan-300 hover:rounded-full cursor-pointer">
-                    <img class="h-8 w-auto object-contain rounded-full" src="/assets/viajes.png" alt="Viajes">
-                    <p class="font-semibold">Viajes</p>
-                </div>
+                <button aria-label="Ir a Pagina de Viajes" class="flex flex-row p-2 hover:bg-cyan-300 hover:rounded-full cursor-pointer">
+                    <img aria-label="Seccion de Viajes" class="h-8 w-auto object-contain rounded-full" src="/assets/viajes.png" alt="Viajes de Sidebar">
+                    <p class="mx-3 font-semibold">Viajes</p>
+                </button>
 
-                <div class="flex flex-row gap-2 hover:bg-cyan-300 hover:rounded-full cursor-pointer">
-                    <img class="h-8 w-auto object-contain rounded-full" src="/assets/pasajeros.png" alt="Pasajeros">
-                    <p class="font-semibold">Pasajeros</p>
-                </div>
+                <button aria-label="Ir a Pagina de Pasajeros" class="flex flex-row p-2 hover:bg-cyan-300 hover:rounded-full cursor-pointer">
+                    <img aria-label="Seccion de Pasajeros" class="h-8 w-auto object-contain rounded-full" src="/assets/pasajeros.png" alt="Pasajeros de Sidebar">
+                    <p class="mx-3 font-semibold">Pasajeros</p>
+                </button>
 
-                <div class="flex flex-row gap-2 hover:bg-cyan-300 hover:rounded-full cursor-pointer">
-                    <img class="h-8 w-auto object-contain rounded-full" src="/assets/conductor-de-autobus.png" alt="Conductores">
-|                    <p class="font-semibold">Conductores</p>
-                </div>
-    </section>
+                <button aria-label="Ir a Pagina de Conductores" class="flex flex-row p-2 hover:bg-cyan-300 hover:rounded-full cursor-pointer">
+                    <img aria-label="Seccion de Conductores" class="h-8 w-auto object-contain rounded-full" src="/assets/conductor-de-autobus.png" alt="Conductores de Sidebar">
+|                    <p class="mx-3 font-semibold">Conductores</p>
+                </button>
+        </nav>
 
         <footer class="flex flex-row gap-2 p-5 cursor-pointer">
-            <img class="h-6 w-auto object-contain rounded-3xl" src="/assets/cerrar-sesion.png" alt="Cerrar Sesion Seccion Sidebar">
-            <p class="text-red-600 font-semibold">Cerrar Sesion</p>
+            <img class="h-6 w-auto object-contain rounded-3xl bg-white" src="/assets/cerrar-sesion.png" alt="Cerrar Sesion Seccion Sidebar">
+            <p class="text-red-700 font-bold text-lg hover:underline">Cerrar Sesion</p>
         </footer>
     </div>
 </main>

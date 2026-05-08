@@ -11,21 +11,56 @@ import { Edit } from './pages/profile/edit/edit';
 
 export const routes: Routes = [
 
-    {  path: '', component: Home},
+  //Dashboard Pagina #1
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./pages/dashboard/dashboard').then((m) => m.Dashboard),
+  },
 
-    {  path: 'earnings', component: Earnings},
+  //Sidebar Global Pagina #2
+  {
+    path: 'sidebar',
+    loadComponent: () => import('./components/shared/sidebar/sidebar').then((m) => m.Sidebar),
+  },
 
-    {  path: 'dashboard', component: Dashboard},
+  //Listado de Conductores Pagina #3
+  {
+    path: 'drivers',
+    loadComponent: () => import('./pages/drivers/drivers').then((m) => m.Drivers),
+  },
 
-    {  path: 'sidebar', component: Sidebar},
+  //Card View de Monitoreo Pagina #4
+  {
+    path: 'drivercard',
+    loadComponent: () => import('./pages/drivers-cards/drivers-cards').then((m) => m.DriversCards),
+  },
 
-    {  path: 'drivers', component: Drivers},
-    
-    {  path: 'login-page', component: LoginPage},
+  //Perfil de Usuario Pagina #5
+  { 
+    path: 'Edit', 
+    loadComponent: () => import('./pages/profile/edit/edit').then((m) => m.Edit) 
+  },
 
-    {  path: 'driversCards', component: DriversCards},
+{
+  path: 'earnings',
+  loadComponent: () => import('./pages/rides/earnings/earnings').then((m) => m.Earnings),
+},
 
-    {  path: 'login', component: Login},
+{
+  path: 'login-page',
+  loadComponent: () => import('./pages/login-page/login-page').then((m) => m.LoginPage),
+},
 
-    {  path: 'Edit', component: Edit}
+  
+
+  { path: 'login', loadComponent: () => import('./pages/autho/login/login').then((m) => m.Login) },
+
+  { path: 'home', loadComponent: () => import('./pages/home/home').then((m) => m.Home) },
+
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+
 ];

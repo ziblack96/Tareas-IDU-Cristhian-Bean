@@ -1,62 +1,96 @@
-<main name="MainContenedor " class="bg-gray-50 min-h-screen w-full">
+<main aria-label="MainContenedor " class="bg-gray-50 min-h-screen w-full">  
+  <nav aria-label="Navigator" class="bg-white w-full h-auto flex items-center justify-between p-2">
+    <div class="flex items-center gap-2">
+      <button class="rounded-lg cursor-pointer hover:bg-lime-400" aria-label="Cambiar Imagen del perfil">
+        <img
+          class="h-8 w-auto object-contain"
+          src="/assets/gente.png"
+          alt="Imagen de perfil"
+          routerLink="/Edit"
+        />
+      </button>
+      <h1 class="text-lg lg:text-lg font-bold hover:underline cursor-pointer">Dominique Ch.</h1>
+      <button aria-label="Revisar Informacion del Perfil de Dominique CH."
+        class="hover:bg-lime-200 rounded-full">
+        <img
+          class="h-auto w-6 object-contain rounded-full"
+          src="/assets/flecha-hacia-abajo.png"
+          alt="Icono de perfil activo"
+        />
+      </button>
+    </div>
+    <button class="rounded-full px-2 cursor-pointer hover:bg-lime-200" aria-label="Campana de Notificaciones de Usuario">
+      <img
+        class="h-8 w-auto object-contain rounded-full"
+        src="/assets/campana-de-notificacion.png"
+        alt="Icono de Campana"
+      />
+    </button>
+  </nav>
 
-    <nav name="Navigator" class="bg-white m-0 w-full flex items-center justify-between p-2 h-auto">
-        <div class="flex items-center gap-2">
-            <img class="h-8 w-auto object-contain rounded-full" src="/assets/gente.png" alt="ImagenPerfil">
-            <h1 class="text-sm font-medium">Dominique Ch.</h1>
-            <img class="h-auto w-4 object-contain rounded-full" src="/assets/flecha-hacia-abajo.png"
-                alt="flecha-hacia-abajo-perfil">
-        </div>
-        <img class="h-8 w-auto object-contain rounded-full" src="/assets/campana-de-notificacion.png"
-            alt="Notificaciones-Campana">
-    </nav>
+  <!--Componente Reutilizable StatCardComponent-->
 
-    <!--Componente Reutilizable StatCardComponent-->
+    <h2 class="text-black text-center text-4xl my-2 font-black">Datos de Conductores</h2>
 
-    <div class="flex flex-row justify-center items-center h-full gap-5 m-2">
-
-        @for (data of card; track $index) {
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full m-2 justify-center">
+      @for (data of card; track $index) {
         <app-stat-card [tituloCard]="data.tituloCard" [numeroCard]="data.numeroCard">
         </app-stat-card>
+      }
+    </div>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 h-full gap-5 m-2 justify-items-center">
+    <div class="flex flex-col lg:flex-row">
+      <div
+        class="bg-gray-100 border-lime-200 border-2 flex flex-col min-w-72 lg:w-96 rounded-xl p-5"
+      >
+        <div class="flex flex-row justify-between">
+          <h2 class="text-black text-3xl font-semibold">Conductores</h2>
+          <button
+            type="button"
+            class="cursor-pointer hover:bg-lime-200 rounded-full p-2"
+            aria-label="buton de acciones de perfil"
+          >
+            <img
+              class="h-auto w-6 object-contain rounded-full"
+              src="/assets/flecha-hacia-abajo.png"
+              alt="flecha-hacia-abajo-conductores"
+            />
+          </button>
+        </div>
+
+        <!--Componente Reutilizable DriverCardComponent-->
+
+        @for (cardUser of cardPerfil; track $index) {
+          <app-driver-card
+            class="hover:divide-y hover:bg-lime-200 rounded-full my-1"
+            [imgURL]="cardUser.imgURL"
+            [tituloUser]="cardUser.tituloUser"
+            [correoUser]="cardUser.correoUser"
+          >
+          </app-driver-card>
         }
+
+        <button
+          aria-label="Enlace para ver todos los conductores disponibles"
+          class="w-auto h-auto cursor-pointer flex flex-row justify-end items-center gap-2
+                 hover:bg-lime-200 rounded-full p-3"
+          routerLink="/drivers"
+        >
+          Todos los conductores<img
+            class="h-auto w-6 object-contain rounded-full"
+            src="/assets/flecha-correcta.png"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
     </div>
 
-
-    <div class="flex flex-row justify-center items-center h-full gap-5 m-2">
-
-        <div class="flex flex-col lg:flex-row lg:justify-between">
-
-            <div class="bg-gray-100 h-auto min-w-72 p-5 gap-lg lg:w-96 rounded-xl m-3
-                                flex flex-col gap-5">
-
-                <div class="flex flex-row justify-between">
-                    <h1 class="text-black font-semibold lg:text-3xl">Conductores</h1>
-                    <img class="h-auto w-6 object-contain rounded-full" src="/assets/flecha-hacia-abajo.png"
-                        alt="flecha-hacia-abajo-conductores">
-                </div>
-
-                <!--Componente Reutilizable DriverCardComponent-->
-
-                @for (cardUser of cardPerfil; track $index) {
-                <app-driver-card [imgURL]="cardUser.imgURL" [tituloUser]="cardUser.tituloUser"
-                    [correoUser]="cardUser.correoUser">
-                </app-driver-card>
-                }
-
-                <div class="w-25 h-auto flex flex-row gap-2">
-                    <h2 class="text-orange-400 text-md lg:text-lg whitespace-nowrap">Todos los conductores</h2>
-                    <img class="h-auto w-6 object-contain rounded-full" src="/assets/flecha-correcta.png"
-                        alt="flecha-correcta">
-                </div>
-            </div>
-
-        </div>
-
-        <div class="bg-gray-100 h-auto  min-w-72 p-5 gap-lg lg:h-96 lg:w-96 rounded-xl m-3">
-            <h1 class="text-black text-left p-2 lg:text-2xl font-medium">Ultimos Viajes</h1>
-            <div class="flex justify-center items-center min-h-48">
-                <p class="text-black  lg:p-5 ">No hay Viajes Disponibles</p>
-            </div>
-        </div>
+    <div class="bg-gray-100 border-2 border-lime-200 min-w-72 lg:w-96 rounded-xl p-5">
+      <h2 class="text-black text-left p-2 text-2xl lg:text-2xl font-bold">Ultimos Viajes</h2>
+      <div class="flex justify-center items-center min-h-48">
+        <p class="text-black text-lg text-center lg:p-5">No hay Viajes Disponibles</p>
+      </div>
     </div>
+  </section>
 </main>
