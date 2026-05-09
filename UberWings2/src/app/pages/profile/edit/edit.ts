@@ -1,10 +1,11 @@
 import { Component, computed, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { isAuthenticated } from '../../../signals/shared/app.signals';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-edit',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './edit.html',
   styleUrl: './edit.css',
 })

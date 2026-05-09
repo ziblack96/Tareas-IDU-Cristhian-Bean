@@ -1,25 +1,26 @@
-<main class="h-screen w-full">
-  <header class="bg-linear-to-r from-blue-200 via-gray-300 to-yellow-200 h-32 w-full"></header>
-
+<main class="min-h-screen w-full flex flex-col items-center">
+  <header class="bg-linear-to-r from-blue-300 via-gray-200/10 to-yellow-300 h-32 w-full"></header>
   <section
-    class="bg-white flex flex-col gap-5 lg:items-start place-items-center border-3 border-gray-300"
+    class="border-orange-500 border-2 bg-lime-700/45 flex flex-col 
+    justify-center items-center backdrop-blur shadow-lg w-full max-w-lg md:max-w-2xl
+    lg:max-w-6xl rounded-lg mx-4 my-10"
   >
-    <div class="flex flex-row py-4 place-items-center lg:text-4xl">
+    <div class="flex flex-row justify-center items-center w-full my-5 lg:text-4xl">
       <img
         src="/assets/Login/mujer.png"
         alt="Icono-perfil-mujer"
-        class="h-36 w-auto object-contain rounded-full"
+        class="h-28 w-28 object-contain rounded-full"
       />
-      <div class="flex flex-col gap-3">
-        <h1 class="text-4xl font-bold">Alexa Rawles</h1>
-        <p class="text-xl font-semibold">alexarawles@gmail.com</p>
+      <div class="flex flex-col font-bold text-center">
+        <h1 class="text-3xl text-left">Alexa Rawles</h1>
+        <p class="text-lg">alexarawles@gmail.com</p>
       </div>
     </div>
 
-    <div class="place-items-center lg:w-full">
+    <div class="flex items-center justify-center my-6 w-full md:max-w-3xl lg:max-w-4xl bg-white rounded-2xl">
       <form
         action=""
-        class="bg-white rounded-lg shadow-xl min-w-96 lg:w-full p-5"
+        class="rounded-xl shadow-xl w-full p-5"
         [formGroup]="ProfileForm"
         (ngSubmit)="onSubmit()"
       >
@@ -35,7 +36,7 @@
               name="FirstName"
               maxlength="21"
               formControlName="FirstName"
-              class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+              class="px-3 py-2 border-2 rounded-lg border-gray-400 placeholder-black font-semibold"
               [class.border-red-500]="
                 isFirstNameRequired ||
                 isFirstNameInvalid ||
@@ -73,7 +74,7 @@
               id="LastName"
               name="LastName"
               maxlength="21"
-              class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+              class="px-3 py-2 border-2 rounded-lg border-gray-400 placeholder-black font-semibold"
               formControlName="LastName"
               [class.border-red-500]="
                 isLastNameRequired ||
@@ -113,7 +114,7 @@
               id="PhoneNumber"
               name="phoneNumber"
               maxlength="9"
-              class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+              class="px-3 py-2 border-2 rounded-lg border-gray-400 placeholder-black font-semibold"
               formControlName="PhoneNumber"
               [class.border-red-500]="isPhoneNumberRequired || isPhoneNumberInvalid"
             />
@@ -136,7 +137,7 @@
               placeholder="nombreapellido@gmail.com"
               id="Email"
               name="email"
-              class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+              class="px-3 py-2 border-2 rounded-lg border-gray-400 placeholder-black font-semibold"
               formControlName="Email"
               [class.border-red-500]="isEmailRequired || isEmailInvalid"
             />
@@ -162,7 +163,7 @@
               placeholder="XXXX-XXXX-XXXXX"
               id="IDNumber"
               maxlength="14"
-              class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+              class="px-3 py-2 border-2 rounded-lg border-gray-400 placeholder-black font-semibold"
               formControlName="IDNumber"
               [class.border-red-500]="isIDNumberRequired || isIDNumberInvalid"
             />
@@ -186,7 +187,7 @@
               id="BirthDate"
               name="BirthDate"
               placeholder="Ingrese su fecha de nacimiento"
-              class="px-3 py-2 border-3 rounded-lg border-gray-300 placeholder-black bg-gray-200 font-semibold"
+              class="px-3 py-2 border-2 rounded-lg border-gray-400 placeholder-black font-semibold"
               formControlName="BirthDate"
               min="1900-01-01"
               max="2026-3-8"
@@ -203,6 +204,7 @@
             <button
               type="submit"
               [disabled]="ProfileForm.invalid"
+              routerLink="/drivercard"
               class="bg-cyan-300 hover:bg-cyan-700 hover:text-white font-bold h-16 rounded-full cursor-pointer my-4 px-6 disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-cyan-800"
             >
               Guardar Registros
@@ -212,6 +214,4 @@
       </form>
     </div>
   </section>
-
-  <div class="h-48 bg-linear-to-r from-blue-200 via-gray-300 to-yellow-200"></div>
 </main>

@@ -3,15 +3,15 @@
     <div class="flex items-center gap-2">
       <button class="rounded-lg" aria-label="Imagen de perfil del usuario activo">
         <img
-          class="h-8 w-auto object-contain rounded-full"
+          class="h-8 w-auto object-contain rounded-full cursor-pointer"
           src="/assets/gente.png"
           alt="ImagenPerfil"
         />
       </button>
-      <h1 class="text-sm lg:text-lg font-medium">Dominique Ch.</h1>
+      <h1 class="text-sm lg:text-lg font-medium cursor-pointer hover:underline hover:underline-offset-2">Dominique Ch.</h1>
       <button aria-label="buton de acciones de perfil">
         <img
-          class="h-auto w-5 object-contain rounded-full"
+          class="h-auto w-5 object-contain rounded-full cursor-pointer"
           src="/assets/flecha-hacia-abajo.png"
           alt="flecha-hacia-abajo-perfil"
         />
@@ -19,7 +19,7 @@
     </div>
     <button class="rounded-lg px-2" aria-label="Campana de Notificacione de Usuario">
       <img
-        class="h-8 w-auto object-contain rounded-full"
+        class="h-8 w-auto object-contain rounded-full cursor-pointer"
         src="/assets/campana-de-notificacion.png"
         alt="Notificaciones-Campana"
       />
@@ -27,7 +27,7 @@
   </nav>
 
   <section
-    class="bg-lime-300 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 place-items-center"
+    class="bg-sky-500 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 place-items-center"
   >
     @for (Driver of lista_drivers; track Driver.id) {
       <div
